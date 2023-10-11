@@ -1,18 +1,36 @@
 import random
 
-arr = [random.randint(1, 100) for _ in range(100)]
+array = [random.randint(1, 100) for _ in range(100)]
 
 
-def func_sort_array(arr):
-    even = [x for x in arr if x % 2 == 0]
-    odd = [x for x in arr if x % 2 != 0]
+def sort_values(arr):
+    even_values = [value for value in arr if value % 2 == 0]
+    odd_values = [value for value in arr if value % 2 != 0]
 
-    even.sort()
-    odd.sort(reverse=True)
+    even_values.sort()
+    odd_values.sort(reverse=True)
 
-    sorted_arr = even + odd
-    return sorted_arr
+    sorted_values = even_values + odd_values
+
+    return sorted_values
 
 
-sorted_arr = func_sort_array(arr)
-print(sorted_arr)
+def sort_indices(arr):
+    indices = list(range(len(arr)))
+
+    even_indices = [i for i in indices if arr[i] % 2 == 0]
+    odd_indices = [i for i in indices if arr[i] % 2 != 0]
+
+    even_indices.sort()
+    odd_indices.sort(reverse=True)
+
+    sorted_indices = even_indices + odd_indices
+
+    return sorted_indices
+
+
+sorted_values = sort_values(array)
+print("Отсортированные значения:", sorted_values)
+
+sorted_indices = sort_indices(array)
+print("Отсортированные индексы:", sorted_indices)
