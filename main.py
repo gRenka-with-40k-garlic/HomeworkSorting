@@ -18,8 +18,8 @@ def sort_values(arr):
 def sort_indices(arr):
     indices = list(range(len(arr)))
 
-    even_indices = [i for i in indices if arr[i] % 2 == 0]
-    odd_indices = [i for i in indices if arr[i] % 2 != 0]
+    even_indices = [i for i in indices if i % 2 == 0]
+    odd_indices = [i for i in indices if i % 2 != 0]
 
     even_indices.sort()
     odd_indices.sort(reverse=True)
